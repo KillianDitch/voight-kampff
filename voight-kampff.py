@@ -47,14 +47,18 @@ def check_access(page_list,ret=False):
 		return response
 	else:
 		print('\r\n'+'-'*50)
-		print('Number of 200 OK results: {}'.format(len(list_200)))
-		print_list(list_200)
-		print('Number of 3XX results: {}'.format(len(list_300)))
-		print_list(list_300)
-		print('Number of 4XX results: {}'.format(len(list_400)))
-		print_list(list_400)
-		print('Number of other results: {}'.format(len(list_other)))
-		print_list(list_other)
+		if len(list_200) > 0:
+			print('Number of 200 OK results: {}'.format(len(list_200)))
+			print_list(list_200)
+		if len(list_300) > 0:
+			print('Number of 3XX results: {}'.format(len(list_300)))
+			print_list(list_300)
+		if len(list_400) > 0:
+			print('Number of 4XX results: {}'.format(len(list_400)))
+			print_list(list_400)
+		if len(list_other) > 0:
+			print('Number of other results: {}'.format(len(list_other)))
+			print_list(list_other)
 
 
 # Handle robots.txt processing.
