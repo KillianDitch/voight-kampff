@@ -5,24 +5,22 @@ Check robots.txt files for actual access.
  While sites often list pages under their robots.txt file that aren't to be accessed by crawlers, those pages are frequently still available and of potential interest. This script targets a domain's robot.txt and checks the status codes on the pages listed therein.
 
 
-
-./voight-kampff.py -h<br/>
+```
+./voight-kampff.py -h
 
 usage: voight-kampff.py [-h] -t --target
 
-
 Scrape robots.txt file and check actual page access.
 
-optional arguments:<br/>
+optional arguments:
 
-  -h, --help   show this help message and exit<br/>
+  -h, --help   show this help message and exit
 
   -t --target  Target URL: e.g., https://google.com
 
 ./voight-kampff.py -t https://yahoo.com
-
 Targeting: https://yahoo.com
--------------------------------------------------
+--------------------------------------------------
 
 https://yahoo.com/robots.txt : 200
 
@@ -58,4 +56,4 @@ Number of 200 OK results: 1
 Number of 3XX results: 0
 Number of 4XX results: 9
 Number of other results: 1
-
+```
