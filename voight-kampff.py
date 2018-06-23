@@ -34,16 +34,13 @@ def check_access(page_list,ret=False):
 		
 		# Build lists for metrics
 		if status == 200:
-			list_200.append(target)
+			list_200.append((target,status))
 		elif status >= 300 and status < 400:
-			list_300.append(target)
+			list_300.append((target,status))
 		elif status >= 400 and status < 500:
-			list_400.append(target)
+			list_400.append((target,status))
 		else:
-			list_other.append(target)
-		
-		# Output result.
-		print('{} : {}'.format(target,status))
+			list_other.append((target,status))
 
 	# If the response is wanted somewhere, deliver it.
 	if ret:
@@ -51,9 +48,13 @@ def check_access(page_list,ret=False):
 	else:
 		print('\r\n'+'-'*50)
 		print('Number of 200 OK results: {}'.format(len(list_200)))
+		print_list(list_200)
 		print('Number of 3XX results: {}'.format(len(list_300)))
+		print_list(list_300)
 		print('Number of 4XX results: {}'.format(len(list_400)))
+		print_list(list_400)
 		print('Number of other results: {}'.format(len(list_other)))
+		print_list(list_other)
 
 
 # Handle robots.txt processing.
